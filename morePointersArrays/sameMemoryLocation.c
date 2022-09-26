@@ -10,7 +10,7 @@
 int main()
 {
     int i = 20;
-    int *p, *q
+    int *p, *q;
 
     p = &i;
     q = p;
