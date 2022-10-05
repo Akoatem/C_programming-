@@ -16,7 +16,7 @@ int **create_matrix(int m, int n, int fill_value)
 
 	matrix = malloc(sizeof(int *) * m); /**matrix store the address for n*/
 	for (int i = 0; i < m; i++) /** this allocate space for each row*/
-		matrix = malloc(sizeof(int) * n);
+		matrix[i] = malloc(sizeof(int) * n);
 	for (int i = 0; i < m; i++) /**this is for fill in value*/
 		for (int j = 0; j < n; j++) /** this is for 2D array nested loop*/
 			matrix[i][j] = fill_value;
@@ -46,5 +46,3 @@ int main(void)
 	free(matrix); /** this prevent memory leak from our program*/
 	return (0);
 }
-
-
