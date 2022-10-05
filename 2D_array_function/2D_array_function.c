@@ -44,6 +44,7 @@ int main(void)
 	for (int i = 0; i < m; i++) /** this loop free the allocated memory*/
 		free(matrix[i]);
 	free(matrix); /** this prevent memory leak from our program*/
+	return (0);
 }
 
 
