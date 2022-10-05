@@ -1,1 +1,1 @@
-Program: Return Multiple Dynamically Allocated Arrays From A Function
+using free function in malloc to calculate sum of integer using pointer
