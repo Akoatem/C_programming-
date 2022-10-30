@@ -1,20 +1,7 @@
+#include "main.h"
+#include "pi.h"
+#include "euler.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-/**
- * struct car - information about the car
- * @name: the name of the car
- * @class: the type of the car
- * @number: the number of the car
- */
-
-struct car
-{
-        char *name;
-        char *class;
-        int number;
-};
 
 /**
  * main - main code
