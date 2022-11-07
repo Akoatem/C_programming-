@@ -9,6 +9,7 @@
 int main(void)
 {
 	pid_t pid;
+	pid_t ppid;
 	
 	pid = fork();
 	
@@ -19,10 +20,13 @@ int main(void)
 	}
 	if (pid == 0)
 	{
-		sleep(5);
+		sleep(23);
 		printf("I am a child\n");
 	}
 	else
-		printf("I am a parent\n");
+	{
+		ppid = getpid();
+		printf("Parent pid is: %u\n", ppid);
+	}
 	return (0);
 }
