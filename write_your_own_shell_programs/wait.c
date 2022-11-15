@@ -1,39 +1,33 @@
+#include <stdio.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <unistd.h>
-#include <stdio.h>
 
 /**
- * main - write a wait program that returns that child return to parent program
+ * main - fork & wait example
  *
- * Return: always 0 successful or -1 unsuccessful
+ * Return: Always 0.
  */
 int main(void)
 {
-        pid_t pid;
-        pid_t ppid;
+    pid_t child_pid;
+    int status;
 
-        pid = fork();
-
-        /* if fork fails */
-        if (pid == -1)
-        {
-                perror("unsuccessful");
-                return (1);
-        }
-        /* in child process */
-        if (pid == 0)
-        {
-                
-                printf("Child process\n");
-        }
-        /* in parent process */
-        else
-        {
-                /*ppid = getpid();*/
-		wait(NULL);
-                sleep(20);
-                printf("I am the parent\n");
-        }
-        return (0);
+    child_pid = fork();
+    if (child_pid == -1)
+    {
+        perror("Error:");
+        return (1);
+    }
+    if (child_pid == 0)
+    {
+        printf("Wait for me, wait for me\n");
+        sleep(3);
+    }
+    else
+    {
+        wait(&status);
+        printf("Oh, it's all better now\n");
+    }
+    return (0);
 }
